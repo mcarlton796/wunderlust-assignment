@@ -1,0 +1,835 @@
+/* import */
+@import url('https://fonts.googleapis.com/css2?family=Molle&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* CSS Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* variables */
+:root{
+    --yellow:#F6D64A;
+    --teal:#55BCD5;
+    --purple:#9B26B0;
+    --blue:#499BD2;
+    --dark-gray:#222222;
+    --light-gray:#eaeaea;
+    --white:#FFFFFF;
+    --black:#000000;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~ Default/Smallest Styles ~~~~~~~~~~~~~~~~~~~ */
+/* Skip to main content */
+#skip{
+    position: absolute;
+    top: -20px;
+}
+
+h1, h2, h3{
+    font-family:"Molle", sans-serif;
+}
+
+h4, p, q, small, nav, button, form{
+    font-family: "Montserrat", sans-serif;
+}
+
+header{
+    background: linear-gradient(var(--teal), var(--white));
+}
+
+#logo img{
+    width: 35%;
+    margin: 10px;
+}
+
+h1{
+    color: var(--dark-gray);
+    font-size: 2rem;
+    width: 90%;
+    margin: 10px auto 0px;
+}
+
+header p{
+    width: 90%;
+    margin: auto;
+    padding-bottom: 20px;
+    line-height: 1.5rem;
+}
+
+/* navigation */
+#toggle{
+    display: none;
+}
+
+#menu-toggle{
+    width: 100%;
+    margin: 0;
+}
+
+.unchecked{
+    position: absolute;
+    right: 0;
+    background-color: var(--yellow);
+    padding: 15px 60px;
+}
+
+.checked{
+    width: 100%;
+    position: absolute;
+    background-color: var(--dark-gray);
+    text-align: center;
+    padding: 40px 0px 1px 0px;
+}
+
+.checked label{
+    color: var(--white);
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -160%);
+}
+
+.unchecked ul{
+    display: none;
+}
+
+.checked ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1px;
+}
+
+li{
+    background-color: var(--teal);
+    width: 100%;
+    padding: 30px 0px;
+}
+
+li a{
+    text-decoration: none;
+    color: var(--black);
+}
+
+nav{
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1rem;
+    top: 2%;
+}
+
+.sr-only{
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    z-index: -1;
+}
+
+/* main content */
+#intro h2{
+    font-size: 1.75rem;
+    width: 90%;
+    margin: 0px auto 10px;
+}
+
+#intro p{
+    font-size: 0.9rem;
+    line-height: 1.25rem;
+    width: 90%;
+    margin: 0px auto 10px;
+}
+
+#img-grid > img, #img-grid > picture img{
+    width: 100%;
+}
+
+/* plan */
+#plan{
+    background-color: var(--yellow);
+    margin-top: 15px;
+}
+
+#plan h3{
+    padding: 20px 0px;
+    font-size: 1.75rem;
+    width: 85%;
+    margin: auto;
+}
+
+#plan div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-around;
+    padding-bottom: 20px;
+}
+
+#plan a{
+    width: 80%;
+    margin: auto;
+}
+
+#plan img{
+    display: block;
+    margin: auto;
+}
+
+#plan section{
+    background-color: var(--teal);
+    border: 2px var(--white) solid;
+    border-radius: 10px;
+    width: 90%;
+    height: 220px;
+    margin: auto;
+}
+
+#plan h4{
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: auto;
+    text-align: center;
+    padding: 15px 0px;
+}
+
+#plan div section:first-child img{
+    width: 50%;
+    max-width: 150px;
+}
+
+#plan div section:nth-child(2) img{
+    width: 60%;
+    max-width: 200px;
+}
+
+#plan div section:nth-child(3) img{
+    width: 45%;
+    max-width: 150px;
+}
+
+#plan div section:last-child img{
+    width: 45%;
+    max-width: 130px;
+}
+
+/* testimonials */
+#testimonials{
+    margin-bottom: 20px;
+}
+
+#testimonials h3{
+    padding: 20px 0px;
+    font-size: 1.75rem;
+    width: 85%;
+    margin: auto;
+}
+
+#testimonials div{
+    text-align: center;
+}
+
+#testimonials h4{
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 5px auto;
+}
+
+#testimonials section{
+    width: 65%;
+    margin: auto;
+}
+
+#testimonials q{
+    font-style: italic;
+}
+
+#testimonials q::before {
+  content: '"';
+}
+
+#testimonials q::after {
+  content: '"';
+}
+
+/* about */
+#about{
+    background-color: var(--blue);
+    padding: 20px 0px;
+}
+
+#about h3{
+    font-size: 1.75rem;
+    width: 90%;
+    margin: 0px auto 15px;
+}
+
+#about div{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    grid-gap: 10px 0px;
+}
+
+#about h4{
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+#about p{
+    color: var(--dark-gray);
+}
+
+#about div section:first-child img{
+    width: 50%;
+    margin-bottom: 5px;
+}
+
+#about div section:nth-child(2) img{
+    width: 60%;
+    margin-bottom: 5px;
+}
+
+#about div section:nth-child(3) img{
+    width: 30%;
+    margin-bottom: 5px;
+}
+
+#about div section:last-child img{
+    width: 65%;
+    margin-bottom: 5px;
+}
+
+/* contact */
+#contact{
+    margin: 20px 0px;
+}
+
+#contact h3{
+    font-size: 1.75rem;
+    width: 90%;
+    margin: auto;
+}
+
+#contact h3 > span{
+    font-family: "Montserrat";
+    font-style: italic;
+    font-size: 1rem;
+}
+
+#names .required, #nums .required, #selects .required{
+    color: var(--purple);
+    font-weight: 400;
+}
+
+#names{
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
+}
+
+#names label{
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+#names input{
+    border: 2px var(--purple) solid;
+    height: 35px;
+    font-family: "Montserrat", sans-serif;
+    padding-left: 10px;
+    font-size: 1rem;
+}
+
+#fName{
+    margin-bottom: 15px;
+}
+
+#nums{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#nums fieldset{
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+}
+
+#nums legend{
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+#nums input[type="radio"]{
+    appearance: none;
+    --webkit-appearance: none;
+    margin: 0;
+    background-color: #fff;
+    font: inherit;
+    color: var(--white);
+    width: 2em;
+    height: 2em;
+    border: 2px var(--purple) solid;
+    border-radius: 50%;
+    /* transform: translateY(30%); */
+    display: grid;
+    place-content: center;
+}
+
+input[type="radio"]::before {
+    content: "";
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    transform: scale(0);
+    color: var(--purple);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--purple);
+}
+
+#nums .radio-label{
+    margin-left: 50px;
+    padding-top: 50px;
+
+}
+
+input[type="radio"]:checked::before {
+    transform: scale(1);
+    color: var(--purple);
+}
+
+#nums > label{
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+#nums > input{
+    border: 2px var(--purple) solid;
+    height: 35px;
+    font-family: "Montserrat", sans-serif;
+    padding-left: 10px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+#selects{
+    width: 90%;
+    margin: auto;
+}
+
+#selects label{
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+select{
+    width: 100%;
+    border: 2px solid var(--purple);
+    height: 42px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #fff;
+    color: var(--dark-gray);
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 15px;
+    background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+}
+
+.custom-select::after {
+  content: "";
+  width: 0.8em;
+  height: 0.5em;
+  background-color: var(--purple);
+  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+}
+
+input[type="submit"]{
+    width: 100%;
+    margin: auto;
+    background-color: var(--purple);
+    border: none;
+    color: var(--white);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    padding: 15px 0px;
+}
+
+/* footer */
+footer{
+    background-color: var(--light-gray);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 0px;
+
+}
+
+footer a{
+    text-decoration: none;
+    color: var(--black);
+    font-family: "Montserrat", sans-serif;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~ Medium Styles ~~~~~~~~~~~~~~~~~~~ */
+@media screen and (min-width: 575px){
+
+    header{
+        padding: 20px 0px 40px;
+        display: grid;
+        grid: repeat(3, 1fr) / 1fr 2fr;
+    }
+
+    header a{
+        grid-row: 1 / 3;
+        grid-column: 1 / 2;
+    }
+
+    #logo img{
+        width: 120%;
+        margin: 10px 0px 0px; 
+    }
+
+    header h1{
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+        font-size: 2.5rem;
+        margin-top: 15px;
+        vertical-align: baseline;
+        padding-top: 30px;
+    }
+
+    header p{
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+        font-size: 1.1rem;
+        
+    }
+
+    nav, .unchecked, .checked{
+        position: relative;
+        grid-row: 3 / 4;
+        grid-column: 1 / -1;
+        width: 100%;
+        margin: auto;
+        background-color: rgba(1, 1, 1, 0);
+        justify-content: left;
+        padding: 0;
+    }
+
+    #toggle, header label{
+        display: none;
+    }
+
+    ul, .unchecked ul{
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        font-size: 0.85rem;
+        width: 85%;
+        margin: auto;
+        max-width: 750px;
+    }
+
+    nav li{
+        width: 20%;
+        height: auto;
+        padding: 15px 10px;
+        background-color: var(--white);
+        color: var(--black);
+        transition-duration: 0.1s;
+    }
+
+    nav li:hover{
+        background-color: var(--yellow);
+        transition-duration: 0.1s;
+    }
+
+    #intro h2{
+        font-size: 2rem;
+        width: 85%;
+        max-width: 750px;
+    }
+
+    #intro p{
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+        width: 85%;
+        max-width: 750px;
+    }
+
+    #img-grid{
+        display: grid;
+        grid: repeat(2, 1fr) / repeat(2, 1fr);
+        width:85%;
+        max-width: 750px;
+        gap: 10px 15px;
+        margin: auto;
+    }
+
+    #img-grid picture{
+        grid-column: 1 / -1;
+    }
+
+    #plan h3{
+        width: 85%;
+        font-size: 2rem;
+        max-width: 750px;
+    }
+
+    #plan div{
+        display: grid;
+        grid: repeat(2, 1fr) / repeat(2, 1fr);
+        width: 85%;
+        margin: auto;
+        max-width: 750px;
+        gap: 20px;
+    }
+
+    #plan section{
+        width: 100%;
+    }
+
+    #testimonials div{
+        display: grid;
+        grid: repeat(2, 1fr) / repeat(2, 1fr);
+        width: 85%;
+        margin: auto;
+        max-width: 750px;
+        gap: 20px;
+    }
+
+    #testimonials img{
+        width: 95%;
+    }
+
+    #about h3{
+        max-width: 750px;
+        width: 85%;
+    }
+
+    #about div{
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 750px;
+        width: 85%;
+    }
+
+    #contact h3{
+        width: 85%;
+        max-width: 750px;
+    }
+
+    #names{
+        width: 85%;
+        max-width: 750px;
+    }
+
+    #nums{
+        width: 85%;
+        max-width: 750px;
+    }
+
+    #selects{
+        width: 85%;
+        max-width: 750px;
+    }
+
+    #mySubmit{
+        width: 50%;
+        float: right;
+        margin-bottom: 15px;
+    }
+
+    #nums fieldset{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    footer{
+        clear: both;
+        margin-top: 50px;
+        display: flex;
+        flex-direction: row;
+        gap: 5%;
+        justify-content: center;
+        
+    }
+
+}
+
+/* ~~~~~~~~~~~~~~~~~~~ Large Styles ~~~~~~~~~~~~~~~~~~~ */
+@media screen and (min-width: 990px){
+    #logo img{
+        width: 20%;
+        max-width: 500px;
+        float: left;
+    }
+
+    header{
+        display: block;
+    }
+
+    header h1{
+        color: var(--black);
+    }
+
+    nav ul{
+        position:fixed;
+        top: 0;
+        right: 0;
+    }
+
+    #intro{
+        display: grid;
+        grid: 1fr / 2fr 3fr;
+        width: 85%;
+        max-width: 1200px;
+        margin: 20px auto;
+        clear: left;
+    }
+
+    #intro h2{
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+    }
+
+    #intro p{
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+        margin-top: 50px;
+    }
+
+    #plan h3{
+        width: 85%;
+        max-width: 1200px;
+    }
+
+    #plan div{
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        width: 85%;
+        max-width: 1200px;
+    }
+
+    #testimonials{
+        padding: 40px 0px;
+    }
+
+    #testimonials h3{
+        width: 85%;
+        max-width: 1200px;
+    }
+
+    #testimonials div{
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        gap: 40px;
+        width: 85%;
+        max-width: 1200px;
+    }
+
+    #testimonials section{
+        width: 200px;
+    }
+
+    #testimonials section img{
+        width: 60%;
+    }
+
+    #about{
+        padding: 50px 0px;
+    }
+
+    #about div{
+        justify-content: center;
+    }
+
+    #about h3{
+        width: 85%;
+        max-width: 1200px;
+    }
+
+    #contact h3{
+        width: 85%;
+        max-width: 1200px;
+    }
+
+    form{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        width: 85%;
+        margin: auto;
+        max-width: 1200px;
+        vertical-align: top;
+    }
+
+    #names{
+        margin: 0;
+        padding: 0;
+    }
+
+    #names{
+        width: 100%;
+    }
+
+    #nums{
+        width: 100%;
+    }
+
+    #selects{
+        width: 100%;
+    }
+
+    footer p{
+        margin-right: 30%;
+    }
+
+}
